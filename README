@@ -1,0 +1,3 @@
+Uses a food API to get nutrional data of inputted food. It then caluclatyes the glycemic index of said food and determines its range 
+on the GI Scale (eg High, Medium, Low). This Started of as a program to test the food API i wanted to use with my group project but 
+i wanted to turn it into something useful.
