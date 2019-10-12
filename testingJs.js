@@ -51,23 +51,24 @@ function testy(food){
             data :JSON.stringify(nutrientReq),
             url: "https://api.edamam.com/api/food-database/nutrients?app_id=9ccfd3ea&app_key=422e0ba66ae6c563f47a9fe391a437f0",
             contentType: "application/json",
-            success: function(fullNutrData){
+            success: function(nutrData){
                 console.log("----------Nutrient JSON----------");
-                console.log(fullNutrData);
+                console.log(nutrData);
                 console.log("---------------------------------");
                 //$("#result").html(glyc);
 
-                fullNutrData=fullNutrData.totalNutrients;
+                var fullNutrData=nutrData.totalNutrients;
                 $.each(fullNutrData,function (key,value) {
+                    console.log(value);
 
-                    if(key==""){
-
-                    }else if(key==""){
-
-                    }else if(key==""){
-
-                    }else if(key==""){
-
+                    if(key=="ENERC_KCAL"){
+                        $('#cal').html(""+value.quantity+value.unit);
+                    }else if(key=="FAT"){
+                        $('#fat').html(""+value.quantity+value.unit);
+                    }else if(key=="PROCNT"){
+                        $('#protein').html(""+value.quantity+value.unit);
+                    }else if(key=="CHOCDF"){
+                        $('#carbs').html(""+value.quantity+value.unit);
                     }
                 });
             }
